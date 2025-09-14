@@ -83,3 +83,4 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9.1
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_3dogw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22133, 2.40596, 0.48954)
+player_path = null

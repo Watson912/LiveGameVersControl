@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ce4b8rpe1d1fd"]
 
-[ext_resource type="Script" uid="uid://b4njxiwe2e7cp" path="res://Scenes/enemy.gd" id="1_m1htj"]
+[ext_resource type="Script" uid="uid://b4njxiwe2e7cp" path="res://Scripts/enemy.gd" id="1_m1htj"]
 [ext_resource type="Script" uid="uid://dcm42cwgnahmn" path="res://Scripts/EnemyIdle.gd" id="2_wovta"]
 [ext_resource type="Script" uid="uid://c8xsenty10jxc" path="res://Scripts/State_machine.gd" id="2_xeo28"]
 
