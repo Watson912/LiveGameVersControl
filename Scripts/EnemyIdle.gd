@@ -16,7 +16,7 @@ func randomize_wander():
 	wander_time = randf_range(0, 1)
 	
 func Enter():
-	#randomize_wander()
+	randomize_wander()
 	
 	print(move_direction)
 	
