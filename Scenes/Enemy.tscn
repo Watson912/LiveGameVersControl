@@ -1,8 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce4b8rpe1d1fd"]
+[gd_scene load_steps=7 format=3 uid="uid://ce4b8rpe1d1fd"]
 
 [ext_resource type="Script" uid="uid://b4njxiwe2e7cp" path="res://Scripts/enemy.gd" id="1_m1htj"]
-[ext_resource type="Script" uid="uid://dcm42cwgnahmn" path="res://Scripts/EnemyIdle.gd" id="2_wovta"]
-[ext_resource type="Script" uid="uid://c8xsenty10jxc" path="res://Scripts/State_machine.gd" id="2_xeo28"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fd37"]
 albedo_color = Color(1, 0.327725, 0.330452, 1)
@@ -35,15 +33,6 @@ transform = Transform3D(-1, 1.30982e-08, 4.37114e-08, -4.37114e-08, 2.86269e-16,
 mesh = SubResource("CylinderMesh_xeo28")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-
-[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("2_xeo28")
-initial_state = NodePath("EnemyIdle")
-
-[node name="EnemyIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
-script = ExtResource("2_wovta")
-enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://dcm42cwgnahmn"
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.988019, 0)
