@@ -14,6 +14,10 @@ config/name="GameDemo2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+State_machine="*res://Scripts/State.gd"
+
 [input]
 
 Forward={
