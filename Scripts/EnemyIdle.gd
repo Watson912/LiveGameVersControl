@@ -2,18 +2,16 @@ extends State
 class_name EnemyIdle
 
 @export var enemy : CharacterBody3D
-var EnemyScript
-var enemyScript
+var move_direction : Vector3
+var move_speed := 10.0
 var wander_time : float
 
 func randomize_wander():
-	var move_direction = enemyScript.get_move_direction()
 	move_direction = Vector3(randf_range(-1,1), 0, randf_range(-1,1)).normalized()
-	wander_time = randf_range(0, 1)
+	wander_time = randf_range(1, 3)
 	
 func Enter():
-	EnemyScript = load("res://Scripts/enemy.gd")
-	enemyScript = EnemyScript.new()
+	
 	randomize_wander()
 	
 	
@@ -24,6 +22,8 @@ func Update(delta: float):
 	else:
 		randomize_wander()
 		
+	enemy.look_at(Vector3(enemy.velocity.x, enemy.global_position.y, enemy.velocity.z), Vector3.UP)
+	
 func Physics_Update(delta: float):
 	if enemy:
 		move_around(delta)
@@ -31,5 +31,5 @@ func Physics_Update(delta: float):
 func move_around(time: float):
 	
 	#move_direction = Vector3(0,0,-1)
-	enemy.velocity = enemyScript.get_move_direction() * enemyScript.get_move_speed()
+	enemy.velocity = move_direction * move_speed
 	
